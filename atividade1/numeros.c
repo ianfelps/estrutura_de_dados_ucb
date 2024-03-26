@@ -24,6 +24,7 @@ int main(int argc, char *argv[]) {
     float media = 0;
     float maior = atof(argv[1]);
     float menor = atof(argv[1]);
+    float numeros[argc - 1];
 
     if (argc <= 1) {
         printf("Nenhum numero fornecido como argumento.\n");
@@ -31,7 +32,6 @@ int main(int argc, char *argv[]) {
     }
 
     // Converter argumentos para float e calcular maior e menor numero
-    float numeros[argc - 1];
     for (int i = 1; i < argc; i++) {
         numeros[i - 1] = atof(argv[i]);
         media += numeros[i - 1];
