@@ -11,6 +11,7 @@ imprimir "true" caso seja número primo ou "false" caso não seja número primo;
 
 int main(int argc, char* argv[]){
 
+    // passar argv para inteiro
     int num = atoi(argv[1]), result = 0;
 
     if (argc <= 1) {
@@ -18,6 +19,7 @@ int main(int argc, char* argv[]){
         return 1;
     }
 
+    // verificar se o número é primo ou não, testando todas os divisores possíveis entre 2 e a metade do número
     for (int i = 2; i <= num / 2; i++) {
         if (num % i == 0) {
             result++;
@@ -25,6 +27,7 @@ int main(int argc, char* argv[]){
         }
     }
 
+    // printar o resultado
     if (result == 0 && num > 1)
         printf("//true\n");
     else
