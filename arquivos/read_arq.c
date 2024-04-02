@@ -1,5 +1,5 @@
 /*
-Ler arquivos em C
+Ler arquivos .txt em C
 */
 
 #include <stdio.h>
@@ -7,6 +7,7 @@ Ler arquivos em C
 
 int main(int argc, char* argv[]){
 
+    // variavel para armazenar string
     char txt[100];
     
     // declarar arquivo

@@ -1,5 +1,5 @@
 /*
-Criar e editar arquivos em C
+Criar e editar arquivos .txt em C
 */
 
 #include <stdio.h>
