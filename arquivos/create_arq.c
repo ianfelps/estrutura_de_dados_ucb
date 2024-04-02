@@ -1,5 +1,5 @@
 /*
-Criar arquivos em C
+Criar e editar arquivos em C
 */
 
 #include <stdio.h>
