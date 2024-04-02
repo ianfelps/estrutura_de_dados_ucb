@@ -11,21 +11,21 @@ imprimir "true" caso seja número primo ou "false" caso não seja número primo;
 
 int main(int argc, char* argv[]){
 
-    int num = atoi(argv[1]), i, result = 0;
+    int num = atoi(argv[1]), result = 0;
 
     if (argc <= 1) {
         printf("Nenhum numero fornecido como argumento.\n");
         return 1;
     }
 
-    for (i = 2; i <= num / 2; i++) {
+    for (int i = 2; i <= num / 2; i++) {
         if (num % i == 0) {
             result++;
             break;
         }
     }
 
-    if (result == 0)
+    if (result == 0 && num > 1)
         printf("//true\n");
     else
         printf("//false\n");
