@@ -17,24 +17,26 @@ int comparar(const void *a, const void *b) {
 int main(int argc, char *argv[]) {
     
     // abrir o arquivo para leitura
-    FILE *arq_csv = fopen("1kk_rand.csv", "r");
+    FILE *arq_csv = fopen(argv[1], "r");
+
+    // verificar se o arquivo abriu
     if (arq_csv == NULL) {
-        printf("Erro ao abrir o arquivo");
+        printf("Erro ao abrir o arquivo %s\n", argv[1]);
         return 1;
     }
 
     // determinar o número de elementos no arquivo
     int tamanho = 0;
     int numero;
-    while (fscanf(arq_csv, "%d", &numero) == 1) {
+    while (fscanf(arq_csv, "%d", &numero) != EOF) {
         tamanho++;
     }
 
     // voltar ao início do arquivo
     rewind(arq_csv);
 
-    // ler os números do arquivo
-    int *numeros = (int *)malloc(tamanho * sizeof(int));
+    // ler os números do arquivo e alocar na memoria
+    int *numeros = malloc(sizeof(int) * tamanho);
     for (int i = 0; i < tamanho; i++) {
         fscanf(arq_csv, "%d", &numeros[i]);
     }
@@ -42,7 +44,7 @@ int main(int argc, char *argv[]) {
     // fechar o arquivo
     fclose(arq_csv);
 
-    // ordenar os números em ordem crescente
+    // ordenar os números em ordem crescente com qsort
     qsort(numeros, tamanho, sizeof(int), comparar);
     // usei o qsort porque o bubble sort demorava absurdamente por causa da quantidade de números no arquivo :)
 

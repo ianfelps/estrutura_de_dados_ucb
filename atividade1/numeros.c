@@ -50,6 +50,7 @@ int main(int argc, char *argv[]) {
     for (int i = 0; i < argc - 2; i++) {
         for (int j = 0; j < argc - i - 2; j++) {
             if (numeros[j] > numeros[j + 1]) {
+                // função swap
                 float temp = numeros[j];
                 numeros[j] = numeros[j + 1];
                 numeros[j + 1] = temp;
