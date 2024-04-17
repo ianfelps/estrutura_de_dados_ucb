@@ -52,5 +52,61 @@ void liberar_lista(No* H){
         free(H);
         H = NULL;
     }
+}
 
+// estrutura da função para verificar a existencia de um caractere
+int verificar_existencia(No* H, char valor_busca){
+    if (H != NULL){
+        if (H -> valor == valor_busca){
+            return 1;
+        } else{
+            return verificar_existencia(H -> proximo_no, valor_busca);
+        }
+    }
+    return 0;
+}
+
+// estrutura da função para verificar quantas vezes um caractere aparece
+int verificar_ocorrencias(No* H, char valor_busca){
+    if(H != NULL){
+        if(H -> valor == valor_busca){
+            return 1 + verificar_ocorrencias(H -> proximo_no, valor_busca);
+        } else{
+            return verificar_ocorrencias(H -> proximo_no, valor_busca);
+        }
+    }
+    return 0;
+}
+
+// estrutura da função para printar a lista invertida
+void imprimir_lista_inversa(No* H){
+    if(H != NULL){
+        imprimir_lista_inversa(H -> proximo_no);
+        printf("%c ", H -> valor);
+    }
+}
+
+// estrutura da função para inserir um nó na posicão 'i'
+void inserir_no_i(No* H, int i){
+    if(H != NULL && i >= 0){
+        if(i == 0){
+            No* novo_no = no('X', H -> proximo_no);
+            H -> proximo_no = novo_no;
+            return;
+        }
+        inserir_no_i(H->proximo_no, i - 1);
+    }
+}
+
+// estrutura da função para remover um nó na posicão 'i'
+void remover_no_i(No* H, int i){
+    if(H != NULL && H != NULL && H -> proximo_no != NULL){
+        if(i == 0){
+            No* no_remover = H -> proximo_no;
+            H -> proximo_no = no_remover -> proximo_no;
+            free(no_remover);
+            return;
+        }
+        remover_no_i(H -> proximo_no, i - 1);
+    }
 }
