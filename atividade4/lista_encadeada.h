@@ -14,5 +14,5 @@ void liberar_lista(No* H);
 int verificar_existencia(No* H, char valor_busca);
 int verificar_ocorrencias(No* H, char valor_busca);
 void imprimir_lista_inversa(No* H);
-void inserir_no_i(No* H, int i);
+void inserir_no_i(No* H, char caractere, int i);
 void remover_no_i(No* H, int i);

@@ -87,14 +87,14 @@ void imprimir_lista_inversa(No* H){
 }
 
 // estrutura da função para inserir um nó na posicão 'i'
-void inserir_no_i(No* H, int i){
+void inserir_no_i(No* H, char caractere, int i){
     if(H != NULL && i >= 0){
         if(i == 0){
-            No* novo_no = no('X', H -> proximo_no);
+            No* novo_no = no(caractere, H -> proximo_no);
             H -> proximo_no = novo_no;
             return;
         }
-        inserir_no_i(H->proximo_no, i - 1);
+        inserir_no_i(H->proximo_no, caractere, i - 1);
     }
 }
 

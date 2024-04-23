@@ -50,10 +50,10 @@ int main(int argc, char* argv[]){
 
     // imprimir lista invertida
     printf("\n\nlista invertida: ");
-    imprimir_lista_inversa(H);
+    imprimir_lista_inversa(Hc);
 
     // adicionar um novo nó em i
-    inserir_no_i(Hc, 2);
+    inserir_no_i(Hc, 'X', 2);
     printf("\n\nnovo no em i: ");
     imprimir_lista(Hc);
 
