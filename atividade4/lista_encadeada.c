@@ -88,8 +88,8 @@ void imprimir_lista_inversa(No* H){
 
 // estrutura da função para inserir um nó na posicão 'i'
 void inserir_no_i(No* H, char caractere, int i){
-    if(H != NULL && i >= 0){
-        if(i == 0){
+    if(H != NULL && i > 0){
+        if(i == 1){
             No* novo_no = no(caractere, H -> proximo_no);
             H -> proximo_no = novo_no;
             return;
@@ -101,7 +101,7 @@ void inserir_no_i(No* H, char caractere, int i){
 // estrutura da função para remover um nó na posicão 'i'
 void remover_no_i(No* H, int i){
     if(H != NULL && H != NULL && H -> proximo_no != NULL){
-        if(i == 0){
+        if(i == 1){
             No* no_remover = H -> proximo_no;
             H -> proximo_no = no_remover -> proximo_no;
             free(no_remover);

@@ -58,8 +58,8 @@ int main(int argc, char* argv[]){
     imprimir_lista(Hc);
 
     // remover um nó em i
-    remover_no_i(Hc, 1);
-    remover_no_i(Hc, 3);
+    remover_no_i(Hc, 2);
+    remover_no_i(Hc, 4);
     printf("\n\nno removido em i: ");
     imprimir_lista(Hc);
 
