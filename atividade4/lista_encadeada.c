@@ -4,7 +4,7 @@
 
 // estrutura de um nó
 No* no(char valor, No* proximo_no){
-    No* no= malloc(sizeof(No));
+    No* no = malloc(sizeof(No));
     no -> valor = valor;
     no -> proximo_no = proximo_no;
     return no; 
