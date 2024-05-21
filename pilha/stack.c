@@ -17,8 +17,8 @@ char pop(StackNode** root){
         return CHAR_MIN; // retorna menor caractere possivel
     }
     StackNode* tmp = *root; // variavel auxiliar
-    *root = tmp->next; // 
-    char tmpData = tmp->data; // 
+    *root = tmp->next; // root aponta para o rpóximo nó da pilha, removendo o nó do topo
+    char tmpData = tmp->data; // valor do dado do nó removido é armazenado
     free(tmp); // libera a memória
     return tmpData; // retorna nó removido
 }
