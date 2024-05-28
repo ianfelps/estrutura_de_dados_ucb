@@ -58,7 +58,7 @@ int isEmpty(QueueNode* root){
 void display(QueueNode* root){
     QueueNode* tmp = root; // criar nó temporário para percorrer a fila
     while (tmp != NULL){ // percorrer a fila até achar o último da fila
-        printf("%c <- ", tmp->data); // printar nó
+        printf("%c -> ", tmp->data); // printar nó
         tmp = tmp->next; // passar para o próximo
     }
 }
