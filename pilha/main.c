@@ -1,3 +1,7 @@
+/*
+Código de uma pilha.
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
 #include "stack.h" // biblioteca da pilha
