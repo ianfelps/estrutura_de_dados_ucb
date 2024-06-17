@@ -6,7 +6,7 @@
 
 // retornar indice de um valor a partir de uma chave
 int hash(char* chave){
-    return (toupper(chave[0])-65)*TAM_ALFABETO +  toupper(chave[1])-65; // considerar as duas primeiras letras da chave
+    return (toupper(chave[0])-65)*TAM_ALFABETO + toupper(chave[1])-65; // considerar as duas primeiras letras da chave
 }
 
 // criar a tabela
