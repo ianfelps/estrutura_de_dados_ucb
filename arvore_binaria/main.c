@@ -17,7 +17,7 @@ int main (int argc, char *argv[]){
     inserir_no(&H, 18);
     
     /*
-        Representação da Árvore Final:
+        Representação da Árvore:
                  10
                /    \
               5      15
@@ -38,12 +38,27 @@ int main (int argc, char *argv[]){
     postOrder(H);
 
     // buscar um nó
-    No* busca = buscar_no(H, 5); // buscar o nó
-    if (busca != NULL){ // verifica se a função de busca não retornou NULL
-        printf("\n\nValor encontrado: %d \n", busca -> valor); // se não retornou NULL, valor encontrado
+    No* buscar = buscar_no(H, 5); // buscar o nó
+    if (buscar != NULL){ // verifica se a função de busca não retornou NULL
+        printf("\n\nValor encontrado: %d \n", buscar->valor); // se não retornou NULL, valor encontrado
     } else { // se não:
         printf("\n\nValor nao encontrado. \n"); // valor não encontrado
     }
+
+    // remover um nó
+    No* remover = remover_no(&H, buscar->valor); // remover o nó encontrado na busca
+    // printar em ordem após remoção
+    printf("Em ordem apos remocao: ");
+    inOrder(H);
+
+    /*
+        Representação da Árvore após a remoção:
+                 10
+               /    \
+              7      15
+             /       / \
+            3       12  18
+    */
     
     return 0;
 }

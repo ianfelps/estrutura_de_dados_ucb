@@ -11,4 +11,4 @@ void inOrder(No* H); // função para percurso em ordem
 void preOrder(No* H); // função para percurso pré-ordem
 void postOrder(No* H); // função para percurso pós-ordem
 No* buscar_no(No* H, int valor); // função para buscar nós
-void remover_no(No** H, int valor); // função para remover nós
+No* remover_no(No** H, int valor); // função para remover nós

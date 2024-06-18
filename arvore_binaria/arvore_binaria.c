@@ -66,6 +66,31 @@ No* buscar_no(No* H, int valor){
 }
 
 // função para remover nós
-void remover_no(No** H, int valor){
-    printf("Implementando...");
+No* remover_no(No** H, int valor){
+    if(H != NULL){ // verifica se existe um nó
+        if(valor < (*H)->valor){ // verifica se o valor recebido é menor que o valor do nó
+            (*H)->no_esquerdo = remover_no(&(*H)->no_esquerdo, valor); // passa para o nó esquerdo
+        } else if (valor > (*H)->valor){ // verifica se o valor recebido é maior que o valor do nó
+            (*H)->no_direito = remover_no(&(*H)->no_direito, valor); // passa para o nó direito
+        } else {
+            // se o nó tiver apenas um ou nenhum nó
+            if((*H)->no_esquerdo == NULL){ // se não houver nós na esquerda
+                No* tmp = (*H)->no_direito; // cria um nó temporário com o valor da direita
+                free(*H); // libera a memória
+                return tmp; // retorna o nó temporário
+            } else if((*H)->no_direito == NULL){ // se não houver nós na direita
+                No* tmp = (*H)->no_esquerdo; // cria um nó temporário com o valor da esquerda
+                free(*H); // libera a memória
+                return tmp; // retorna o nó temporário
+            }
+            // se houver dois nós
+            No* tmp = (*H)->no_direito; // cria um nó temporário com o valor da direita
+            while(tmp && tmp->no_esquerdo != NULL){ // enquanto o nó temporário tiver um nó esquerdo
+                tmp = tmp->no_esquerdo; // passa para o nó esquerdo
+            }
+            (*H)->valor = tmp->valor; // atribui o valor do nó temporário
+            (*H)->no_direito = remover_no(&(*H)->no_direito, tmp->valor); // passa para o nó direito
+        }
+    }
+    return *H;
 }
